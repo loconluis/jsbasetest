@@ -6,7 +6,8 @@
   "author": "Luis Locon <luis.locon@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
     "jest": "^28.1.0"
