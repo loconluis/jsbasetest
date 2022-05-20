@@ -28,3 +28,43 @@ test("Probar un callback", () => {
     expect(str).toBe("aloH")
   })
 })
+
+
+const reverseString2 = str => {
+  return new Promise((resolve, reject) => {
+    if (!str) {
+      reject(new Error("No hay texto"))
+    }
+
+    resolve(str.split("").reverse().join(""))
+  })
+}
+
+test("probar una promesa", () => {
+  return reverseString2("Hola")
+  .then(str => {
+    expect(str).toBe("aloH")
+  })
+})
+
+
+test("Probar Async/Await", async () => {
+  const string = await reverseString2("Hola");
+  expect(string).toBe("aloH")
+})
+
+afterEach(() => {
+  console.log("Despues de cada prueba");
+})
+
+afterAll(() => {
+  console.log("Despues de todas las pruebas");
+})
+
+beforeEach(() => {
+  console.log("Antes de cada prueba");
+})
+
+beforeAll(() => {
+  console.log("Antes de Todas las pruebas");
+})
